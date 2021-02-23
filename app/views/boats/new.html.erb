@@ -1,14 +1,20 @@
-<h1>Please insert the details of your boat below</h1>
-<p>Don't forget to add a nice picture</p>
 <div class="container">
+  <h1>Please insert the details of your boat below</h1>
+  <p>Don't forget to add a nice picture! still to do</p>
+
   <%= simple_form_for(@boat) do |f| %>
     <%= f.input :name, placeholder: 'Sweet ocean'%>
-    <%= f.input :boat_type, placeholder: 'Sailing boat' %>
+    <%= f.input :boat_type, collection: ['Sailing boat', 'Yacht', 'Catamaran', 'Paddle dream'] %>
     <%= f.input :length, placeholder: '32 ft' %>
     <%= f.input :port_location, placeholder: 'Athens' %>
     <%= f.input :year, placeholder: '2015' %>
     <%= f.input :passenger_capacity, collection: 1..10%>
     <%= f.input :description, placeholder: 'Add a short boat description here.'%>
-    <%= f.submit %>
+    <%= f.submit class: "btn-prim-col" %>
   <% end %>
+
+  <%= link_to 'Back', boats_path %>
 </div>
+
+
+
