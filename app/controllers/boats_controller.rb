@@ -28,7 +28,7 @@ class BoatsController < ApplicationController
 
   def update
     if @boat.update(boat_params)
-      redirect_to boat_path(@boat)
+      redirect_to boats_path
     else
       render :edit
     end

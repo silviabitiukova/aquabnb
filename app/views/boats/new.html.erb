@@ -1,2 +1,14 @@
-<h1>Boats#new</h1>
-<p>Find me in app/views/boats/new.html.erb</p>
+<h1>Please insert the details of your boat below</h1>
+<p>Don't forget to add a nice picture</p>
+<div class="container">
+  <%= simple_form_for(@boat) do |f| %>
+    <%= f.input :name, placeholder: 'Sweet ocean'%>
+    <%= f.input :boat_type, placeholder: 'Sailing boat' %>
+    <%= f.input :length, placeholder: '32 ft' %>
+    <%= f.input :port_location, placeholder: 'Athens' %>
+    <%= f.input :year, placeholder: '2015' %>
+    <%= f.input :passenger_capacity, collection: 1..10%>
+    <%= f.input :description, placeholder: 'Add a short boat description here.'%>
+    <%= f.submit %>
+  <% end %>
+</div>
