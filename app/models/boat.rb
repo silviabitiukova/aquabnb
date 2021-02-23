@@ -1,4 +1,4 @@
 class Boat < ApplicationRecord
-  has_one :user
-  has_many :users, through: :bookings
+  belongs_to :user
+  has_many :bookings
 end
