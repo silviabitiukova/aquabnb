@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_180927) do
     t.string "last_name"
     t.text "bio"
     t.boolean "owner", default: false
+    t.date "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
