@@ -1,3 +1,19 @@
+@media(min-width: 769px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+}
+
 .card-boat {
   overflow: hidden;
   background: white;
