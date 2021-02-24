@@ -1,10 +1,10 @@
 <div class="container w-50 p-4">
-  <h2>Sign up</h2>
+  <h2 class="text-white"><b>Sign up</b></h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs text-white">
       <%= f.input :email,
                   required: true,
                   autofocus: true,
@@ -19,7 +19,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class: "btn-prim-col" %>
     </div>
   <% end %>
 
