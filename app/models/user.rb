@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :boats
+  validates :first_name, :last_name, :bio, presence: true
+  validates :first_name, uniqueness: { scope: :last_name }
 end
