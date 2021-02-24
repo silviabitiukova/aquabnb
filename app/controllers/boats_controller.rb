@@ -13,7 +13,9 @@ class BoatsController < ApplicationController
   end
 
   def create
+    # raise
     @boat = Boat.new(boat_params)
+    @boat.year = params[:boat]["year(1i)"]
     @boat.user = current_user
     @boat.user.owner = true
     if @boat.save
@@ -46,6 +48,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:price_per_day, :name, :length, :description, :port_location, :type, :year, :passenger_capacity)
+    params.require(:boat).permit(:price_per_day, :name, :length, :description, :port_location, :boat_type, :year, :passenger_capacity, :boat_image)
   end
 end
