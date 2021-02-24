@@ -1,7 +1,6 @@
-<div class="container">
-  <div class="boat-create">
-  <h1>Please insert the details of your boat below</h1>
-  <p>Don't forget to add a nice picture! still to do</p>
+<div class="container text-center text-white">
+  <div class="w-50 mx-auto p-4 text-left">
+  <h2 class=" text-center"><b>Please insert the details of your boat below</b></h2>
     <%= simple_form_for(@boat) do |f| %>
       <%= f.input :name, placeholder: 'Sweet ocean'%>
       <%= f.input :boat_type, collection: ['Sailing boat', 'Yacht', 'Catamaran', 'Paddle dream'] %>
