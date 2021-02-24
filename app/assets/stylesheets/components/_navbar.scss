@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #276678;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,17 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.auth-hover {
+  &:hover {
+    opacity: 0.7 !important;
+  }
+}
+
+.nav-logo-hover {
+  &:hover {
+    transform: scale(1.2) !important;
+    transition: 0.2s;
+  }
 }
