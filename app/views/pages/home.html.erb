@@ -3,6 +3,22 @@
     <div class="banner-content">
       <h1>Explore The Open Sees with AquaBnb</h1>
       <p>Explore Boats</p>
+      <br>
+      <div class="search-form">
+        <%= form_tag boats_path, method: :get do %>
+          <%= text_field_tag :port_location,
+            params[:port_location],
+            class: "form-control",
+            placeholder: "Where do you start your journey?"
+          %>
+          <%= text_field_tag :boat_type,
+            params[:boat_type],
+            class: "form-control",
+            placeholder: "Sailing boat or yacht?"
+          %>
+          <%= submit_tag "Find", class: "btn-sec-col margin-10" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </body>
