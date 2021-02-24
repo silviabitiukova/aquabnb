@@ -8,6 +8,8 @@
       <%= f.input :port_location, placeholder: 'Athens' %>
       <%= f.input :year, placeholder: '2015' %>
       <%= f.input :passenger_capacity, collection: 1..10%>
+      <%= f.input :price_per_day, placeholder: '80$'%>
+      <%= f.input :boat_image, placeholder: 'www.url_to_your_pic.com'%>
       <%= f.input :description, placeholder: 'Add a short boat description here.'%>
       <%= f.submit class: "btn-prim-col" %>
     <% end %>
