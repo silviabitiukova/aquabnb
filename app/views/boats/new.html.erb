@@ -11,6 +11,13 @@
       <%= f.input :price_per_day, as: :integer, placeholder: '80$'%>
       <%= f.input :boat_image, placeholder: 'www.url_to_your_pic.com'%>
       <%= f.input :description, placeholder: 'Add a short boat description here.'%>
+      <label class="btn btn-prim-col">
+        Upload Photo
+        <span style="display:none;">
+          <%= f.input :photo, as: :file %>
+        </span>
+      </label>
+      <br>
       <%= f.submit class: "btn-prim-col" %>
     <% end %>
     <br>
