@@ -7,8 +7,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <%= link_to "Register your boat", "/boats/new", class: "btn-sec-col justify-content-end mr-3" %>
     <ul class="navbar-nav mr-auto">
       <% if !user_signed_in? %>
         <li class="nav-item">

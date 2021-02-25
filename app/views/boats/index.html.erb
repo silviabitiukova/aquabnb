@@ -1,10 +1,6 @@
-<h1>Boats that we found for your dates:</h1>
-<%= link_to "Register your boat", "/boats/new", class: "btn-prim-col" %>
-<br>
-<br>
-<br>
-<div class="container">
-  <div class="cards">
+<div class="container text-center mt-4">
+  <h1 class="text-white">Boats that we found for your dates:</h1>
+  <div class="cards mx-auto my-5 p-4 text-left br-10 opac-50">
     <% @boats.each do |boat| %>
       <div class="card-boat">
           <%= image_tag(boat.boat_image) %>
@@ -20,4 +16,3 @@
     <% end %>
   </div>
 </div>
-0
