@@ -1,19 +1,22 @@
-<div class="container-big">
-  <h1>Beautiful boat "<%= @boat.name %>" in <%= @boat.port_location %></h1>
-  <div class="container">
-   <img class="container__image" src="https://images.unsplash.com/photo-1498994292978-4d6ff757c6dc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=617&q=80">
-   <div class="container__text">
-    <ul class="list-group">
-     <li><h3>Length:<%= @boat.length %> <h3></li>
-     <li><h3>Port location: <%= @boat.port_location %> <h3></li>
-     <li><h3>Year constructed: <%= @boat.year %><h3></li>
-     <li><h3>Type :<%= @boat.boat_type %><h3></li>
-     <li><h3>Passanger capacity: <%= @boat.passenger_capacity %><h3></li>
-     <li><h3>Price per day: <%= @boat.price_per_day %><h3></li>
-    
-    </ul>
-    <%= link_to "Book now  ⛵", "#", class: "btn-prim-col" %>
-    <%= link_to "Back to search", boats_path , class: "btn-prim-col" %>
+<div class="container">
+  <h1>Beautiful <%= @boat.boat_type %> "<%= @boat.name %>" in <%= @boat.port_location %></h1>
+  <div class="white-card">
+  <div class="container-display-boat">
+    <div class="container-display-boat__text">
+     <ul>
+      <li><h3>Length:<%= @boat.length %> <h3></li>
+      <li><h3>Port location: <%= @boat.port_location %> <h3></li>
+      <li><h3>Year constructed: <%= @boat.year %><h3></li>
+      <li><h3>Type:<%= @boat.boat_type %><h3></li>
+      <li><h3>Passanger capacity: <%= @boat.passenger_capacity %><h3></li>
+      <li><h3>Price per day: <%= @boat.price_per_day %><h3></li>
+     </ul>
     </div>
-  </div>
+    <img class="container-display-boat__image" src="https://images.unsplash.com/photo-1504716325983-cb91edab7e7d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1336&q=80">
+   </div>
+   <div class="bottom-button">
+   <%= link_to "Back to search", boats_path , class: "btn-prim-col" %>
+   <%= link_to "Book now  ⛵", "#", class: "btn-prim-col" %>
+ </div>
+</div>
 </div>

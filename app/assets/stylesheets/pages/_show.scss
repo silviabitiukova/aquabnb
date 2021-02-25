@@ -1,14 +1,32 @@
-.container {
-  padding: 20px 40px 40px;
-  max-width: 640px;
+.container-display-boat {
+  padding: 10px 10px 10px;
+  max-width: 690px;
   display: flex;
   &__image {
-    margin: 20px 30px 0 0;
-    width: 200px;
+    margin: 0 30px 0 0;
+    width: 350px;
     object-fit: contain;
     align-self: flex-start;
   }
   &__text {
     flex: 1 1 auto;
   }
+}
+
+.container-display-boat h3 {
+  font-size: 15px;
+}
+
+.bottom-button {
+text-align: left;
+}
+.btn-prim-col {
+  display:inline-block;
+  font-size: 10px;
+}
+.white-card {
+  background-color: blanchedalmond;
+  border-radius: 3px;
+  max-width: 700px;
+  padding: 8px 8px 8px 8px;
 }
