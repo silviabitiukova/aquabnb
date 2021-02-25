@@ -1,12 +1,11 @@
 .container-display-boat {
-  padding: 10px 10px 10px;
   max-width: 690px;
   display: flex;
   &__image {
-    margin: 0 30px 0 0;
     width: 350px;
     object-fit: contain;
     align-self: flex-start;
+    border-radius: 2px;
   }
   &__text {
     flex: 1 1 auto;
@@ -16,15 +15,15 @@
   font-size: 15px;
 }
 .bottom-button {
-text-align: left;
+  text-align: left;
 }
 .btn-prim-col {
   display:inline-block;
   font-size: 10px;
 }
 .white-card {
+  opacity: 90%;
   background-color: #FCFCFC ;
-  border-radius: 3px;
-  max-width: 700px;
+  max-width: 750px;
   padding: 8px 8px 8px 8px;
 }
