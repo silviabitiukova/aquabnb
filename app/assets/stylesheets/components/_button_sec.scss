@@ -5,11 +5,13 @@
   border-radius: 4px;
   border: none;
   text-decoration: none;
+  transition: 0.4s;
 
-  // &:hover {
-  //   // color: black;
-  //   background-color: rgba(39, 102, 120, 0.8);
-  //   transition: 0.4s;
-  // }
+  &:hover {
+    font-weight: bold;
+    // background-color: rgba(39, 102, 120, 0.8);
+
+
+  }
 }
 
