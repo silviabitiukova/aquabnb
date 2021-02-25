@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>confirm your booking</h1>
+  <%= @test %>
+  <br>
+  Please review your booking's details
+  <br>
+  <ul>
+    <li>display the boat image with @boat.image</li>
+    <li>Your boat's name: <%= @boat.name %></li>
+    <li>Your boat's length (ft): <%= @boat.length %></li>
+    <li>Port: <%= @boat.port_location %></li>
+    <li>Your number of people:</li>
+    <li>Your period:</li>
+    <li>Cost: <%= @boat.price_per_day*7%>
+  <%# fixed days=7 to be changed %></li>
+  </ul>
+  <%= simple_form_for [ @boat, @booking ] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :number_of_guests %>
+    <%= f.submit "Book!", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+
+

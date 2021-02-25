@@ -3,14 +3,20 @@
   <div class="cards mx-auto my-5 p-4 text-left br-10 opac-50">
     <% @boats.each do |boat| %>
       <div class="card-boat">
-          <%= image_tag(boat.boat_image) %>
+        <% if boat.photo.attached? %>
+          <%= cl_image_tag boat.photo.key %>
+        <% else %>
+          <%= image_tag "default_boat.png" %>
+        <% end %>
         <div class="card-boat-headline">
           <h2><%= boat.name %></h2>
           <h2><%= boat.price_per_day %> €/day</h2>
         </div>
         <div class="card-boat-infos">
           <p><%= boat.boat_type %> (<%= boat.year %>) <i class="fa fa-arrows-alt-h"> </i><%=boat.length %>  <i class="fa fa-users"> </i><%= boat.passenger_capacity %>  <i class="fas fa-anchor"> </i><%= boat.port_location %></p>
-          <%= link_to "more", boat_path(boat), class: "btn-prim-col" %>
+          <%# <%= link_to "more", boat_path(boat, (query: request.query_parameters[:query]) if params[:query].present?), class: "btn-prim-col" %>
+          <%= link_to "more", boat_path(boat, query: params[:query].present? ? request.query_parameters[:query] : 'not coming from query'), class: "btn-prim-col" %>
+
         </div>
       </div>
     <% end %>
