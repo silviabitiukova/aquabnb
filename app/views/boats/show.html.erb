@@ -12,7 +12,7 @@
           <li class="list-group-item"><h3>Price per day: <%= @boat.price_per_day %> EUR <h3></li>
         </ul>
       </div>
-      <img class="container-display-boat__image" <%= image_tag(@boat.boat_image)%>
+      <img class="container-display-boat__image" <%= image_tag(@boat.boat_image)%> >
     </div>
    <div class="bottom-button">
    <%= link_to "Back to search", boats_path , class: "btn-prim-col" %>
