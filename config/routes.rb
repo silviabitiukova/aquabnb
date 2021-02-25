@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [:new, :create]
   end
+  get "/dashboard", to: "dashboards#index", as: :dashboard
 end

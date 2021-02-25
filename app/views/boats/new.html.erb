@@ -1,5 +1,5 @@
 <div class="container text-center text-white">
-  <div class="w-60 mx-auto my-5 p-4 text-left br-10 opac-50">
+  <div class="w-60 mx-auto my-5 p-4 pt-5 text-left br-10 opac-50">
   <h2 class=" text-center"><b>Please insert the details of your boat below</b></h2>
     <%= simple_form_for(@boat) do |f| %>
       <%= f.input :name, placeholder: 'Sweet ocean'%>
@@ -9,9 +9,15 @@
       <%= f.input :year, as: :date, discard_day: true, discard_month: true, placeholder: '2015' %>
       <%= f.input :passenger_capacity, as: :integer, collection: 1..10%>
       <%= f.input :price_per_day, as: :integer, placeholder: '80$'%>
-      <%= f.input :boat_image, placeholder: 'www.url_to_your_pic.com'%>
       <%= f.input :description, placeholder: 'Add a short boat description here.'%>
-      <%= f.submit class: "btn-prim-col" %>
+      <label class="btn btn-prim-col">
+        Upload Photo
+        <span style="display:none;">
+          <%= f.input :photo, as: :file %>
+        </span>
+      </label>
+      <br>
+      <%= f.submit class: "btn btn-prim-col" %>
     <% end %>
     <br>
     <br>

@@ -39,6 +39,12 @@
                     label: false,
                     placeholder: "Confirm password",
                     input_html: { autocomplete: "new-password" } %>
+        <label class="btn btn-prim-col">
+          Upload Photo
+          <span style="display:none;">
+            <%= f.input :photo, as: :file %>
+          </span>
+        </label>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn-prim-col" %>
         </div>
