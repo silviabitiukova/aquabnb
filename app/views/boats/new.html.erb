@@ -9,7 +9,6 @@
       <%= f.input :year, as: :date, discard_day: true, discard_month: true, placeholder: '2015' %>
       <%= f.input :passenger_capacity, as: :integer, collection: 1..10%>
       <%= f.input :price_per_day, as: :integer, placeholder: '80$'%>
-      <%= f.input :boat_image, placeholder: 'www.url_to_your_pic.com'%>
       <%= f.input :description, placeholder: 'Add a short boat description here.'%>
       <label class="btn btn-prim-col">
         Upload Photo
@@ -18,7 +17,7 @@
         </span>
       </label>
       <br>
-      <%= f.submit class: "btn-prim-col" %>
+      <%= f.submit class: "btn btn-prim-col" %>
     <% end %>
     <br>
     <br>
