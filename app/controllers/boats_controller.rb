@@ -2,7 +2,12 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :destroy, :edit, :update]
 
   def index
-    @boats = Boat.all
+    if params[:query][:port_location].present?
+      @boats = Boat.search_by_port_location(params[:query][:port_location])
+      # raise
+    else
+      @boats = Boat.all
+    end
   end
 
   def show
@@ -14,7 +19,6 @@ class BoatsController < ApplicationController
   end
 
   def create
-    # raise
     @boat = Boat.new(boat_params)
     @boat.year = params[:boat]["year(1i)"]
     @boat.user = current_user
