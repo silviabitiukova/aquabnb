@@ -1,6 +1,7 @@
 .container-display-boat {
   max-width: 690px;
   display: flex;
+  
   &__image {
     width: 350px;
     object-fit: contain;
@@ -9,6 +10,7 @@
   }
   &__text {
     flex: 1 1 auto;
+    height: auto;
   }
 }
 .container-display-boat h3 {
