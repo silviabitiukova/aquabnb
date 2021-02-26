@@ -10,5 +10,8 @@ class DashboardsController < ApplicationController
       "You have no boats listed!"
     end
   end
-  
+
+  def index_incoming
+  end
+
 end
