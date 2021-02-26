@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [:new, :create]
   end
-  get "/dashboard", to: "dashboards#index", as: :dashboard
-  get "/dashboard", to: "dashboards#index_owner", as: :dashboard_owner
-  get "/dashboard", to: "dashboards#index_incoming", as: :dashboard_incoming
+  resources :dashboards, only: [:index] do
+    collection do
+      get :index_owner
+      get :index_incoming
+    end
+  end
 end
