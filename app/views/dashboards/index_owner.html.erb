@@ -1,0 +1,38 @@
+<% if @boats.present? %>
+<% @boats.each do |boat| %>
+    <div class="container text-center pt-5 mt-5">
+  <h1 class="text-white">Beautiful <%= boat.boat_type %> "<%= boat.name %>" in <%= boat.port_location %></h1>
+  <div class="white-card mx-auto">
+    <div class="container-display-boat">
+      <div class="container-display-boat__text">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><h3>Length: <%= boat.length %> <h3></li>
+          <li class="list-group-item"><h3>Port location: <%= boat.port_location %> <h3></li>
+          <li class="list-group-item"><h3>Year constructed: <%= boat.year %><h3></li>
+          <li class="list-group-item"><h3>Type: <%= boat.boat_type %><h3></li>
+          <li class="list-group-item"><h3>Passanger capacity: <%= boat.passenger_capacity %><h3></li>
+          <li class="list-group-item"><h3>Price per day: <%= boat.price_per_day %> EUR <h3></li>
+        </ul>
+      </div>
+      <% if boat.photo.attached? %>
+        <%= cl_image_tag boat.photo.key, class: "container-display-boat__image" %>
+      <% else %>
+        <%= image_tag "default_boat.png", class: "container-display-boat__image" %>
+      <% end %>
+    </div>
+     <div class="bottom-button">
+   <%= link_to "Back to search", boats_path , class: "btn-prim-col" %>
+   </div>
+ </div>
+</div>
+<% end %>
+<% else %>
+    <div class="container mx-auto py-4 w-50">
+        <div class="mx-auto my-5 p-4 br-10 opac-50">
+            <h2 class="text-center text-white mx-auto p-5"><%= "You have not listed any boats yet!" %></h2>
+            <div class="container text-center mb-4">
+                <%= link_to "Register your boat", "/boats/new", class: "btn-sec-col text-center" %>
+            </div>
+        </div>
+    </div>
+<% end %>
