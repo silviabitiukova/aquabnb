@@ -1,3 +1,5 @@
+require "open-uri"
+
 # SEEDING USERS
     # t.string "email", default: "", null: false
     # t.string "encrypted_password", default: "", null: false
@@ -8,7 +10,7 @@
     # t.boolean "owner", default: false
 
 user_list = [
-  [ "peter@home.com", "secret", "Peter", "Buchmacher", "Living on the sea since 1986", true ],
+  [ "test@test.com", "secret", "Peter", "Buchmacher", "Living on the sea since 1986", true ],
   [ "mary@mycompany.com", "secret", "Mary", "Dover", "Having travelled once around the world twice!", false ],
   [ "victoria@sailors.org", "secret", "Victoria", "Danielson", "Sailing is my life.", true ]
 ]
@@ -43,19 +45,19 @@ puts
 boat_list = [
   [  1,   230, 1999,   6,  "32.15 ft.", "Athens",     "Sailing boat",
     "Janneau 32.2",
-    "https://images.unsplash.com/photo-1564878123164-6a9c9957fc69",
+    "https://images.unsplash.com/photo-1564878123164-6a9c9957fc69?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
     "Beautiful sailing boat, ideal to explore Greek Islands" ],
   [  1,  1518, 1996,  12,  "49.21 ft.", "Mykonos",    "Yacht",
      "Riviera 48 Flybridge",
-     "https://images.unsplash.com/photo-1605281317010-fe5ffe798166",
+     "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1328&q=80",
      "Great motorboat for speedy rides, skipper included" ],
   [  3,  1530, 2006,  10,  "39.15 ft.", "Athens",     "Catamaran",
     "Nautitec 40 Catamaran",
-    "https://images.unsplash.com/photo-1587587914411-99b15314dc84",
+    "https://images.unsplash.com/photo-1587587914411-99b15314dc84?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
     "Super luxurious and spacy cat for up to 10 people" ],
   [  1,  1730, 1994,  10,  "51.25 ft.", "Paros",      "Yacht",
     "Princess 470",
-    "https://images.unsplash.com/photo-1531339751961-324b4c494be9",
+    "https://images.unsplash.com/photo-1531339751961-324b4c494be9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80",
     "Feel the speed with this great motorboat" ],
   [  3,  2263, 2020,  12,  "49.15 ft.", "Rhodos",     "Yacht",
     "Sealine C430 (2020)",
@@ -63,11 +65,11 @@ boat_list = [
     "The perfect choice for an unforgettable experience, brand new!" ],
   [  1,   820, 1996,  11,  "32.15 ft.", "Santorini",  "Catamaran",
     "Lagoon 420",
-    "https://images.unsplash.com/photo-1581272281570-61907217b302",
+    "https://images.unsplash.com/photo-1581272281570-61907217b302?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     "Sail in style with this beautiful catamaran" ],
   [  1,   765, 1999,  12,  "46.15 ft.", "Poros",      "Sailing boat",
     "Dromor Triton 48",
-    "https://images.unsplash.com/photo-1519801584609-8ee5f072eddd",
+    "https://images.unsplash.com/photo-1519801584609-8ee5f072eddd?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
     "Great Greek sailing boat brand for rent in marina of Poros" ],
   [  3,   408, 2004,  10,  "44.15 ft.", "Athens",     "Sailing boat",
     "Bavaria 44",
@@ -75,17 +77,17 @@ boat_list = [
     "Meet Athens by sea with your wonderful Bavaria sailing boat" ],
   [  1,  4209, 2008,  19,  "65.15 ft.", "Athens",     "Yacht",
     "Apreamare Riva 60",
-    "https://images.unsplash.com/photo-1599257559270-eeccb1f266df",
+    "https://images.unsplash.com/photo-1599257559270-eeccb1f266df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80",
     "Pure luxury for unforgettable moments" ],
   [  3,  6166, 1967,  49,  "82.15 ft.", "Mykonos",   "Sailing boat",
     "230 Custom Unique",
-    "https://images.unsplash.com/photo-1568764461962-b649bb701242",
+    "https://images.unsplash.com/photo-1568764461962-b649bb701242?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
     "Custom made 2 mast sailing boat for 49 people" ]
 ]
 
 puts "Creating #{boat_list.length} boats..."
 boat_list.each do | user_id, price_per_day, year, passenger_capacity, length, port_location, boat_type, name, boat_image, description |
-  Boat.create(
+  boat = Boat.new(
     user_id: user_id,
     price_per_day: price_per_day,
     year: year,
@@ -94,9 +96,12 @@ boat_list.each do | user_id, price_per_day, year, passenger_capacity, length, po
     port_location: port_location,
     boat_type: boat_type,
     name: name,
-    boat_image: boat_image,
+    # boat_image: boat_image,
     description: description
   )
+  photo = URI.open(boat_image)
+  boat.photo.attach(io: photo, filename: 'name.webp', content_type: 'image/webp')
+  boat.save
   Boat.last == "" ? (puts "Error!") : (puts "Added #{Boat.last.name}")
 end
 puts "Finished!"
