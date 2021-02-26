@@ -21,8 +21,33 @@ class BookingsController < ApplicationController
       render :new
     end
 
+def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to dashboard
+  end
+  def declined
+    @booking = Booking.find(params[:id])
+    @booking.status = "Declined"
+    @booking.save
+    redirect_to dashboard
+  end
 
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "Accepted"
+    @booking.save
+    redirect_to dashboard
+  end
 
+  def declined
+    @booking = Booking.find(params[:id])
+    @booking.status = "Declined"
+    @booking.save
+    redirect_to dashboard
+  end
+  
   end
 
   private
