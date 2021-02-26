@@ -4,11 +4,7 @@ class DashboardsController < ApplicationController
   end
 
   def index_owner
-    if current_user.owner
       @boats = current_user.boats
-    else
-      "You have no boats listed!"
-    end
   end
 
   def index_incoming
