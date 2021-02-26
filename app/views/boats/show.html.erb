@@ -21,7 +21,14 @@
    <div class="bottom-button">
    <%= link_to "Back to search", boats_path , class: "btn-prim-col" %>
    <%# <%= link_to "Book now  ⛵", new_boat_booking_path(@boat, (query: request.query_parameters[:query]) if params[:query].present?), class: "btn-prim-col" %>
-   <%= link_to "Book now  ⛵", new_boat_booking_path(@boat, query: params[:query].present? ? request.query_parameters[:query] : 'not coming from query'), class: "btn-prim-col" %>
+
+   <% if params[:query].present? %>
+    <%= link_to "Book now  ⛵", new_boat_booking_path(@boat, query: request.query_parameters[:query]), class: "btn-prim-col" %>
+   <% else %>
+     <%= link_to "Book now  ⛵", new_boat_booking_path(@boat), class: "btn-prim-col" %>
+   <% end %>
+
+
 
   </div>
  </div>

@@ -15,7 +15,13 @@
         <div class="card-boat-infos">
           <p><%= boat.boat_type %> (<%= boat.year %>) <i class="fa fa-arrows-alt-h"> </i><%=boat.length %>  <i class="fa fa-users"> </i><%= boat.passenger_capacity %>  <i class="fas fa-anchor"> </i><%= boat.port_location %></p>
           <%# <%= link_to "more", boat_path(boat, (query: request.query_parameters[:query]) if params[:query].present?), class: "btn-prim-col" %>
-          <%= link_to "more", boat_path(boat, query: params[:query].present? ? request.query_parameters[:query] : 'not coming from query'), class: "btn-prim-col" %>
+
+          <% if params[:query].present? %>
+            <%= link_to "more", boat_path(boat, query: request.query_parameters[:query]), class: "btn-prim-col" %>
+          <% else %>
+            <%= link_to "more", boat_path(boat), class: "btn-prim-col" %>
+          <% end %>
+
 
         </div>
       </div>
