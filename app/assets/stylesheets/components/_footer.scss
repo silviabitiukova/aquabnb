@@ -1,12 +1,10 @@
 .footer-basic {
-    position: absolute;
     padding: 0 2px;
     width: 100%;
     background-color :#276678;
     color: white;
     opacity: 0.9;
-    bottom: 0;
-
+    
   }
   
   .footer-basic ul {
@@ -53,8 +51,10 @@
   
 
 .page-container {
-  position: relative;
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+.content-container {
+  min-height: calc(100vh - 67px - 36px);
 }
