@@ -1,0 +1,31 @@
+<div class="container mx-auto py-4 w-50">
+        <% if @bookings.present? %>
+          <div class="cards mx-auto my-5 p-4 text-left br-10 opac-50">
+            <% @bookings.each do |booking| %>
+            <div class="card-boat">
+                <% if booking.boat.photo.attached? %>
+                <%= cl_image_tag booking.boat.photo.key %>
+                <% else %>
+                <%= image_tag "default_boat.png" %>
+                <% end %>
+                <div class="card-boat-headline">
+                <h2><%= booking.boat.name %></h2>
+                <h2><%= booking.boat.price_per_day %> €/day</h2>
+                </div>
+                <div class="card-boat-infos">
+                <p>
+                    <%= booking.boat.boat_type %> (<%= booking.boat.year %>) <i class="fa fa-arrows-alt-h"> </i><%=booking.boat.length %>  <i class="fa fa-users"> </i><%= booking.boat.passenger_capacity %>  <i class="fas fa-anchor"> </i><%= booking.boat.port_location %>
+                </p>
+                <%#= link_to "more", boat_path(boat, query: params[:query].present? ? request.query_parameters[:query] : 'not coming from query'), class: "btn-prim-col" %>
+                <h2><%= booking.boat.price_per_day * (booking.end_date - booking.start_date) %> € Total</h2>
+                </div>
+            </div>
+            <% end %>
+          </div>
+        <% else %>
+        <div class="mx-auto my-5 p-4 br-10 opac-50">
+            <h2 class="text-center text-white mx-auto p-5"><%= "You do not have any bookings yet! Why not check out our Homepage? 😉" %></h2>
+            </div>
+        <% end %>
+</div>
+
