@@ -6,7 +6,7 @@
   <h6>Your boat's name: <%= @boat.name %></h6>
   <h6>Port: <%= @boat.port_location %></h6>
   <h6>Your boat's length (ft): <%= @boat.length %></h6>
-  <h6>Cost: <%= @boat.price_per_day*(@booking[:end_date]-@booking[:start_date]).to_i%>
+  <h6>Cost: <%= @boat.price_per_day*(@booking.end_date - @booking.start_date).to_i if params[:query].present? && params[:query][:start_date].present? && params[:query][:end_date].present?%>
   <%# fixed days=7 to be changed %> $</h6>
   <br>
 
