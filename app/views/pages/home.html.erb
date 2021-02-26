@@ -3,29 +3,42 @@
     <div class="banner-content pt-5 mt-5">
       <h1>Explore The Open Seas with AquaBnB</h1>
       <p>Explore Boats</p>
-      <br>
+      <%# <br> %>
       <div class="search-form">
         <%= form_with scope: :query, local: true, url: boats_path, method: :get do |f| %>
-          <%= f.text_field :port_location,
-            class: "form-control",
-            placeholder: "Where do you start your journey?"
-          %>
-          <%= f.text_field :boat_type,
-            class: "form-control",
-            placeholder: "Sailing boat or yacht?"
-          %>
-          <%= f.number_field :number_of_guests,
-            class: "form-control",
-            placeholder: "2"
-          %>
-          <%= f.date_field :start_date,
-            class: "form-control"
-          %>
-          <%= f.date_field :end_date,
-            class: "form-control"
-          %>
-
-          <%= submit_tag "Find", class: "btn-sec-col margin-10" %>
+          <div class="row">
+            <div class="col-sm-6">
+              <%= f.text_field :port_location,
+                class: "form-control my-2",
+                placeholder: "Where do you start your journey?"
+              %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.text_field :boat_type,
+                class: "form-control my-2",
+                placeholder: "Sailing boat or yacht?"
+              %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <%= f.number_field :number_of_guests,
+                class: "form-control my-2",
+                placeholder: "How many people?"
+              %>
+            </div>
+            <div class="col-sm-4">
+              <%= f.date_field :start_date,
+                class: "form-control my-2"
+              %>
+            </div>
+            <div class="col-sm-4">
+              <%= f.date_field :end_date,
+                class: "form-control my-2"
+              %>
+            </div>
+          </div>
+          <%= submit_tag "Find", class: "btn-sec-col my-2" %>
         <% end %>
       </div>
     </div>

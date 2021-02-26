@@ -1,13 +1,37 @@
 <div class="container text-center text-white">
-  <div class="w-60 mx-auto my-5 p-4 pt-5 text-left br-10 opac-50">
+  <div class="w-60 mx-auto my-5 p-4 pt-5 text-left br-10 opac-50 relative-100">
   <h2 class=" text-center"><b>Please insert the details of your boat below</b></h2>
     <%= simple_form_for(@boat) do |f| %>
-      <%= f.input :name, placeholder: 'Sweet ocean'%>
-      <%= f.input :boat_type, collection: Boat::OPT %>
-      <%= f.input :length, as: :integer, placeholder: 'in ft' %>
-      <%= f.input :port_location, placeholder: 'Athens' %>
-      <%= f.input :year, as: :date, discard_day: true, discard_month: true, placeholder: '2015' %>
-      <%= f.input :passenger_capacity, as: :integer, collection: 1..10%>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.input :name, placeholder: 'Sweet ocean'%>
+        </div>
+        <div class="col-sm-6">
+          <%= f.input :boat_type, collection: Boat::OPT %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.input :length, as: :integer, placeholder: 'in ft' %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.input :port_location, placeholder: 'Athens' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.input :year, as: :date, discard_day: true, discard_month: true, placeholder: '2015' %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.input :passenger_capacity, as: :integer, collection: 1..10%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+        </div>
+      </div>
       <%= f.input :price_per_day, as: :integer, placeholder: '80$'%>
       <%= f.input :description, placeholder: 'Add a short boat description here.'%>
       <label class="btn btn-prim-col">
